@@ -14,15 +14,9 @@ codes.forEach((code, idx) => {
 
     code.addEventListener("keydown", (e) => {
         if (e.key === "Backspace") {
-
-            // If current field has value → clear it AND move back
-            if (code.value) {
+            if (code.value !== "") {
                 code.value = "";
-                if (idx > 0) {
-                    codes[idx - 1].focus();
-                }
-            }
-            // If already empty → just move back
+            } 
             else if (idx > 0) {
                 codes[idx - 1].focus();
             }
